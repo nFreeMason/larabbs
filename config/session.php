@@ -15,7 +15,6 @@ return [
     |            "memcached", "redis", "array"
     |
     */
-
     'driver' => env('SESSION_DRIVER', 'file'),
 
     /*
