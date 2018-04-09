@@ -37,4 +37,10 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 | 测试
 |
 */
-Route::get('test','Test\Test@index')->name('test.index');
+//Route::get('test','Test\Test@index')->name('test.index');
+
+Route::post('test','Test\Test@index')->name('test.index');
+
+//Route::resource('test/users','Test\Test');
+
+Route::get('test/{user}','Test\Test@show')->name('test.show');

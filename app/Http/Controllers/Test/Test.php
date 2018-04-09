@@ -2,14 +2,37 @@
 
 namespace App\Http\Controllers\Test;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class Test extends Controller
 {
-    //
-    public function index()
+    public function __construct()
     {
+//        $this->middleware('guest');
+    }
+
+    public function show(User $user)
+    {
+        dd(captcha_src('flat'));
+        $result = $this->authorize('update',$user);
+        dd($result);
+        dd('yes');
+    }
+
+    //
+    public function index(Request $request)
+    {
+
+        $data = $request->toArray();
+        if (Auth::guard()->attempt($data,true)) {
+            return '登录成功';
+        }else{
+            return '登录失败';
+        }
+
         var_dump(str_contains('冉凯 冉博哲 冉闵 a 冉未凡',['fsdaf','asdfasda','dasdasd']));
         $array = [
             [
