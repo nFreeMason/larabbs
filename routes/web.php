@@ -48,3 +48,4 @@ Route::post('test','Test\Test@index')->name('test.index');
 //Route::resource('test/users','Test\Test');
 
 Route::get('test/{user}','Test\Test@show')->name('test.show');
+Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
