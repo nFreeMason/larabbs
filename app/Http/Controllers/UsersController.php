@@ -27,12 +27,12 @@ class UsersController extends Controller
     public function update(UserRequest $request, UploadHandler $uploader, User $user)
     {
         try {
-            $this->authorize('update',$user);
-        }catch (AuthorizationException $e){
+            $this->authorize('update', $user);
+        } catch (AuthorizationException $e) {
             return redirect()->route('root');
         }
         $data = $request->all();
-        if ( $request->avatar ) {
+        if ($request->avatar) {
             $result = $uploader->save($request->avatar, 'avatars', $user->id, 362);
             if ($result) {
                 $data['avatar'] = $result['path'];
@@ -40,15 +40,15 @@ class UsersController extends Controller
         }
 
         $user->update($data);
-        return redirect()->route('users.show',$user->id)->with('success','个人资料更新成功！');
+        return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
     }
 
     public function edit(User $user)
     {
 //        dd(\request()->input(),$user);
         try {
-            $this->authorize('update',$user);
-        }catch (AuthorizationException $e){
+            $this->authorize('update', $user);
+        } catch (AuthorizationException $e) {
             return redirect()->route('root');
         }
 //        dd(false > 0,strtotime('1970-01-01 8:00:00'),$user);
@@ -56,14 +56,14 @@ class UsersController extends Controller
 //        dd(app('geocoder')->reverse('43.882587','-103.454067')->get());
 //        dd(e('<script>alert(1)</script>'),htmlspecialchars_decode('&lt;span&gt;测试@#$%&lt;/span&gt;'),'<script>alert(1)</script>');
 //        dd($user->find(2));
-        return view('users.edit',compact('user'));
+        return view('users.edit', compact('user'));
     }
 
     //
     public function show(User $user)
     {
-        $this->authorize('update',$user);
-        $test = ['name'=>'测试'];
-        return view('users.show',compact('user','test'));
+        $this->authorize('update', $user);
+        $test = ['name' => '测试'];
+        return view('users.show', compact('user', 'test'));
     }
 }
