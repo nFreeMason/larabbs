@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Handlers\UploadHandler;
-use App\Model\User;
+use App\Models\User;
 use App\Http\Requests\UserRequest;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
@@ -13,6 +13,12 @@ use Geocoder\Laravel\Facades\Geocoder;
 
 class UsersController extends Controller
 {
+
+    public function __construct()
+    {
+
+    }
+
     public function store()
     {
         dd(123);
