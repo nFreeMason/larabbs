@@ -12,6 +12,8 @@
 */
 
 Route::resource('users','UsersController',['only'=>['show','update','edit']]);
+Route::match(['put','patch'],'users/{user}','UsersController@update')->name('users.update');
+Route::get('users/{user}/edit','UsersController@edit')->name('users.edit');
 
 Route::get('/', 'PagesController@root')->name('root');
 

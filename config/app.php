@@ -138,6 +138,9 @@ return [
 
     'providers' => [
 
+        \Torann\GeoIP\GeoIPServiceProvider::class,
+        \Geocoder\Laravel\Providers\GeocoderService::class,
+        \Spatie\Permission\PermissionServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */
@@ -177,6 +180,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
+
     ],
 
     /*
@@ -191,6 +196,9 @@ return [
     */
 
     'aliases' => [
+
+        'GeoCode' => \Geocoder\Laravel\Facades\Geocoder::class,
+        'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
@@ -225,7 +233,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
     ],
 
 ];

@@ -29,7 +29,13 @@ return [
     */
 
     'stores' => [
+        // me 添加配置
+        "geocode" => [
+            'driver' => 'redis',
+            'connection' => 'geocode-cache',
+        ],
 
+        // 原配置
         'apc' => [
             'driver' => 'apc',
         ],
