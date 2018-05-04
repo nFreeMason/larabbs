@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::resource('categories','CategoriesController',['only'=>['show']]);
 
 Route::resource('users','UsersController',['only'=>['show','update','edit']]);
@@ -43,7 +45,7 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 | 测试
 |
 */
-//Route::get('test','Test\Test@index')->name('test.index');
+Route::get('test','Test\Test@index')->name('test.index');
 
 Route::post('test','Test\Test@index')->name('test.index');
 

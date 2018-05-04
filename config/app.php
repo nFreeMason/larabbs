@@ -141,6 +141,7 @@ return [
         \Torann\GeoIP\GeoIPServiceProvider::class,
         \Geocoder\Laravel\Providers\GeocoderService::class,
         \Spatie\Permission\PermissionServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */
@@ -197,6 +198,7 @@ return [
 
     'aliases' => [
 
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'GeoCode' => \Geocoder\Laravel\Facades\Geocoder::class,
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Test;
 
 use App\Model\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +22,7 @@ class Test extends Controller
 
     public function show( User $user )
     {
+
         dd( captcha_src( 'flat' ) );
         $result = $this->authorize( 'update', $user );
         dd( $result );
@@ -30,6 +32,9 @@ class Test extends Controller
     //
     public function index( Request $request )
     {
+        $timestamp = Carbon::now();
+        var_dump( str_contains( '冉凯 冉博哲 冉闵 a 冉未凡', [ '冉a', 'asdfasda', 'dasdasd' ] ) );
+        dd($timestamp->toDateString(),$timestamp->addDay()->toDateString());
 
         $data = $request->toArray();
         if ( Auth::guard()->attempt( $data, true ) ) {
@@ -38,7 +43,7 @@ class Test extends Controller
             return '登录失败';
         }
 
-        var_dump( str_contains( '冉凯 冉博哲 冉闵 a 冉未凡', [ 'fsdaf', 'asdfasda', 'dasdasd' ] ) );
+
         $array = [
             [
                 'A',
