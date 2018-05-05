@@ -12,7 +12,6 @@
 */
 
 
-
 Route::resource('categories','CategoriesController',['only'=>['show']]);
 
 Route::resource('users','UsersController',['only'=>['show','update','edit']]);

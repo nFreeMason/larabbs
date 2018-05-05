@@ -8,7 +8,24 @@
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
-/* Topic Index Page */
+/* header */
+
+.navbar-static-top {
+  .dropdown-menu {
+    padding: 0px;
+
+    li a {
+      border-bottom: 1px solid #d8d8d8;
+      line-height: 2.4;
+
+      .glyphicon {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+//* Topic Index Page */
 .topics-index-page, .categories-show-page {
   .topic-list {
     .nav > li > a {

@@ -32,6 +32,7 @@ class Test extends Controller
     //
     public function index( Request $request )
     {
+    	dd();
         $timestamp = Carbon::now();
         var_dump( str_contains( '冉凯 冉博哲 冉闵 a 冉未凡', [ '冉a', 'asdfasda', 'dasdasd' ] ) );
         dd($timestamp->toDateString(),$timestamp->addDay()->toDateString());

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', isset($category) ? $category->name : '话题列表')
+@section('title', '话题列表')
 
 @section('content')
 
@@ -10,8 +11,6 @@
                     {{ $category->name }} ：{{ $category->description }}
                 </div>
             @endif
-
-            <div class="panel panel-default">
             <div class="panel panel-default">
 
                 <div class="panel-heading">
