@@ -11,6 +11,26 @@
 |
 */
 
+switch (request()->server('HTTP_HOST'))
+{
+	case 'larabbs.cn':
+	{
+		App::setLocale('zh-CN');
+		break;
+	}
+	case 'larabbs.com':
+	{
+		App::setLocale('en');
+		break;
+	}
+	case 'larabbs.jp':
+	{
+		App::setLocale('ja-jp');
+		break;
+	}
+}
+
+Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
 
 Route::resource('categories','CategoriesController',['only'=>['show']]);
 
@@ -44,9 +64,9 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 | 测试
 |
 */
-Route::get('test','Test\Test@index')->name('test.index');
+Route::any('test','Test\Test@index')->name('test.index');
 
-Route::post('test','Test\Test@index')->name('test.index');
+//Route::any('test','Test\Test@index')->name('test.index');
 
 //Route::resource('test/users','Test\Test');
 

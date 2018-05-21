@@ -178,15 +178,13 @@ return [
         \Geocoder\Laravel\Providers\GeocoderService::class,
         \Spatie\Permission\PermissionServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        App\MyProvidersClass\LangConfig::class,
-        App\Providers\TestServiceProvider::class,
         
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-//         App\Providers\BroadcastServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -206,7 +204,7 @@ return [
     */
 
     'aliases' => [
-		'lang_config' => \App\MyProvidersClass\LangConfig::class,
+
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'GeoCode' => \Geocoder\Laravel\Facades\Geocoder::class,
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,

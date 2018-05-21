@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\MyProvidersClass\LangConfig;
+use App\Services\TestService;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,5 +31,13 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+	    app()->singleton('langConfig',function (){
+	    	return new LangConfig('en');
+	    });
+	   // app()->alias('langConfig','lanCon');
+//	    $this->app->singleton('test',function (){
+//		    return new TestService();
+//	    });
+//	    $this->app->alias('test','test');
     }
 }
