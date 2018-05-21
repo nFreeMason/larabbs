@@ -5,6 +5,7 @@ return [
 	'languages' => [
 		'zh-CN' => 'zh-CN',
 		'en-us' => 'en',
+		'en' => 'en',
 		'ja-jp' => 'ja-jp'
 	],
 	
@@ -178,7 +179,7 @@ return [
         \Geocoder\Laravel\Providers\GeocoderService::class,
         \Spatie\Permission\PermissionServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        App\MyProvidersClass\LangConfig::class,
+//        App\MyProvidersClass\LangConfig::class,
         App\Providers\TestServiceProvider::class,
         
         /*

@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Model\User;
+use App\Models\User;
 use App\Models\Topic;
 
 class TopicPolicy extends Policy

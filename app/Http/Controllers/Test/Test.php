@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Test;
 
 use App\Contracts\TestContract;
+use App\Handlers\SlugTranslateHandler;
 use App\Models\User;
 use App\Models\Topic;
 use App\MyProvidersClass\LangConfig;
@@ -122,6 +123,7 @@ class Test extends Controller
     //
     public function index( Request $request )
     {
+    	dd((new SlugTranslateHandler())->translate($request->input('text')));
 	    dd(explode(',','en'),strtolower(null));
 	    $data = [
 		    'json' => \request()->input('json'),
