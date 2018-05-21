@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Test;
 
 use App\Contracts\TestContract;
-use App\Model\User;
+use App\Models\User;
 use App\Models\Topic;
 use App\MyProvidersClass\LangConfig;
 use App\MyProvidersClass\LangConfigInterface;
@@ -106,6 +106,7 @@ class Test extends Controller
 	public function tran( $array )
 	{
 		$str = '';
+		
 		foreach ( $array as $item ) {
 			if ( is_array($item) ) {
 				$str .= $this->tran($item);
@@ -121,6 +122,7 @@ class Test extends Controller
     //
     public function index( Request $request )
     {
+	    dd(explode(',','en'),strtolower(null));
 	    $data = [
 		    'json' => \request()->input('json'),
 		    'symbol' => \request()->input('symbol'),
