@@ -120,6 +120,8 @@ class Test extends Controller
 		return $str;
 	}
 	
+	
+	
     //
     public function index( Request $request )
     {
