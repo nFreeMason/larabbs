@@ -182,7 +182,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
 //        App\MyProvidersClass\LangConfig::class,
         App\Providers\TestServiceProvider::class,
-        
+        iBrand\Sms\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -208,6 +208,9 @@ return [
     */
 
     'aliases' => [
+    	'PhpSms' => Toplan\PhpSms\Facades\Sms::class,
+	    'SmsManager' => \Toplan\Sms\Facades\SmsManager::class,
+    	'Sms' => iBrand\Sms\Facade::class,
 		'lang_config' => \App\MyProvidersClass\LangConfig::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'GeoCode' => \Geocoder\Laravel\Facades\Geocoder::class,

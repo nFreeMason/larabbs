@@ -56,6 +56,9 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
+// Notification
+Route::resource('notifications','NotificationsController',['only'=>'index']);
+
 /*
 |--------------------------------------------------------------------------
 | 测试路由
