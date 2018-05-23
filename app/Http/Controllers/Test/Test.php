@@ -126,8 +126,7 @@ class Test extends Controller
     //
     public function index( Request $request, Topic $topic )
     {
-    	dd($topic::take(10)->with('category')->get()->toArray());
-    	dd($topic->find('101')->hasManyReplies()->with('belongsToUser')->get(),Topic::with('user')->paginate(30));
+    	dd($topic->find('101')->replies()->with('user')->get(),Topic::with('user')->paginate(30));
     	
     	dd((new SlugTranslateHandler())->translate($request->input('text')));
 	    dd(explode(',','en'),strtolower(null));
