@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
         ];
 
         // 生成数据集合
-        $users = factory(User::class)->times(10)->make()->each(function($user,$index)use($faker,$avatars){
+        $users = factory(User::class)->times(100)->make()->each(function($user,$index)use($faker,$avatars){
             // 从头像数据中随机取出一个并赋值
             $user->avatar = $faker->randomElement($avatars);
         });

@@ -64,6 +64,7 @@ class UsersController extends Controller
     {
 //        $result = $this->authorize('show', $user);
         $test = ['name' => '测试'];
+        
         return view('users.show', compact('user', 'test'));
     }
 }

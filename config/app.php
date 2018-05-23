@@ -173,6 +173,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Barryvdh\Cors\ServiceProvider::class,
         Overtrue\LaravelLang\TranslationServiceProvider::class,
 //        \Dimsav\Translatable\TranslatableServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,

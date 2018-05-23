@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Test;
 
 use App\Contracts\TestContract;
 use App\Handlers\SlugTranslateHandler;
+use App\Models\Reply;
 use App\Models\User;
 use App\Models\Topic;
 use App\MyProvidersClass\LangConfig;
@@ -123,8 +124,11 @@ class Test extends Controller
 	
 	
     //
-    public function index( Request $request )
+    public function index( Request $request, Topic $topic )
     {
+    	dd($topic::take(10)->with('category')->get()->toArray());
+    	dd($topic->find('101')->hasManyReplies()->with('belongsToUser')->get(),Topic::with('user')->paginate(30));
+    	
     	dd((new SlugTranslateHandler())->translate($request->input('text')));
 	    dd(explode(',','en'),strtolower(null));
 	    $data = [
