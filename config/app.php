@@ -144,53 +144,55 @@ return [
     */
 
     'providers' => [
-        /*
-         * Laravel Framework Service Providers...
-         */
-        Illuminate\Auth\AuthServiceProvider::class,
-        Illuminate\Broadcasting\BroadcastServiceProvider::class,
-        Illuminate\Bus\BusServiceProvider::class,
-        Illuminate\Cache\CacheServiceProvider::class,
-        Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-        Illuminate\Cookie\CookieServiceProvider::class,
-        Illuminate\Database\DatabaseServiceProvider::class,
-        Illuminate\Encryption\EncryptionServiceProvider::class,
-        Illuminate\Filesystem\FilesystemServiceProvider::class,
-        Illuminate\Foundation\Providers\FoundationServiceProvider::class,
-        Illuminate\Hashing\HashServiceProvider::class,
-        Illuminate\Mail\MailServiceProvider::class,
-        Illuminate\Notifications\NotificationServiceProvider::class,
-        Illuminate\Pagination\PaginationServiceProvider::class,
-        Illuminate\Pipeline\PipelineServiceProvider::class,
-        Illuminate\Queue\QueueServiceProvider::class,
-        Illuminate\Redis\RedisServiceProvider::class,
-        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
-        Illuminate\Session\SessionServiceProvider::class,
-        Illuminate\Translation\TranslationServiceProvider::class,
-        Illuminate\Validation\ValidationServiceProvider::class,
-        Illuminate\View\ViewServiceProvider::class,
-
-        /*
-         * Package Service Providers...
-         */
-        Barryvdh\Cors\ServiceProvider::class,
-        Overtrue\LaravelLang\TranslationServiceProvider::class,
-//        \Dimsav\Translatable\TranslatableServiceProvider::class,
-        \Torann\GeoIP\GeoIPServiceProvider::class,
-        \Geocoder\Laravel\Providers\GeocoderService::class,
-        \Spatie\Permission\PermissionServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
-//        App\MyProvidersClass\LangConfig::class,
-        App\Providers\TestServiceProvider::class,
-        iBrand\Sms\ServiceProvider::class,
-        /*
-         * Application Service Providers...
-         */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-//         App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+	    /*
+		 * Laravel Framework Service Providers...
+		 */
+	    Illuminate\Auth\AuthServiceProvider::class,
+	    Illuminate\Broadcasting\BroadcastServiceProvider::class,
+	    Illuminate\Bus\BusServiceProvider::class,
+	    Illuminate\Cache\CacheServiceProvider::class,
+	    Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+	    Illuminate\Cookie\CookieServiceProvider::class,
+	    Illuminate\Database\DatabaseServiceProvider::class,
+	    Illuminate\Encryption\EncryptionServiceProvider::class,
+	    Illuminate\Filesystem\FilesystemServiceProvider::class,
+	    Illuminate\Foundation\Providers\FoundationServiceProvider::class,
+	    Illuminate\Hashing\HashServiceProvider::class,
+	    Illuminate\Mail\MailServiceProvider::class,
+	    Illuminate\Notifications\NotificationServiceProvider::class,
+	    Illuminate\Pagination\PaginationServiceProvider::class,
+	    Illuminate\Pipeline\PipelineServiceProvider::class,
+	    Illuminate\Queue\QueueServiceProvider::class,
+	    Illuminate\Redis\RedisServiceProvider::class,
+	    Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
+	    Illuminate\Session\SessionServiceProvider::class,
+	    Illuminate\Translation\TranslationServiceProvider::class,
+	    Illuminate\Validation\ValidationServiceProvider::class,
+	    Illuminate\View\ViewServiceProvider::class,
+	
+	    /*
+		 * Package Service Providers...
+		 */
+	    \App\Providers\Pay\PayServiceProvider::class,
+	    Barryvdh\Cors\ServiceProvider::class,
+	    Overtrue\LaravelLang\TranslationServiceProvider::class,
+	    //        \Dimsav\Translatable\TranslatableServiceProvider::class,
+	    \Torann\GeoIP\GeoIPServiceProvider::class,
+	    \Geocoder\Laravel\Providers\GeocoderService::class,
+	    \Spatie\Permission\PermissionServiceProvider::class,
+	    Barryvdh\Debugbar\ServiceProvider::class,
+	    //        App\MyProvidersClass\LangConfig::class,
+	    App\Providers\TestServiceProvider::class,
+	    iBrand\Sms\ServiceProvider::class,
+	    \Yansongda\LaravelPay\PayServiceProvider::class,
+	    /*
+		 * Application Service Providers...
+		 */
+	    App\Providers\AppServiceProvider::class,
+	    App\Providers\AuthServiceProvider::class,
+	    //         App\Providers\BroadcastServiceProvider::class,
+	    App\Providers\EventServiceProvider::class,
+	    App\Providers\RouteServiceProvider::class,
 
 
 
@@ -208,10 +210,10 @@ return [
     */
 
     'aliases' => [
+    	'Pay' => \Yansongda\LaravelPay\Facades\Pay::class,
     	'PhpSms' => Toplan\PhpSms\Facades\Sms::class,
 	    'SmsManager' => \Toplan\Sms\Facades\SmsManager::class,
     	'Sms' => iBrand\Sms\Facade::class,
-		'lang_config' => \App\MyProvidersClass\LangConfig::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'GeoCode' => \Geocoder\Laravel\Facades\Geocoder::class,
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,

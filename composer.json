@@ -7,6 +7,7 @@
     "require": {
         "php": ">=7.0.0",
         "barryvdh/laravel-cors": "^0.11.0",
+        "barryvdh/laravel-ide-helper": "^2.4",
         "dimsav/laravel-translatable": "8.*",
         "fideloper/proxy": "~3.3",
         "guzzlehttp/guzzle": "~6.3",
@@ -25,7 +26,9 @@
         "spatie/laravel-permission": "~2.7",
         "toin0u/geocoder-laravel": "^4.0",
         "toplan/laravel-sms": "~2.6",
-        "torann/geoip": "^1.0"
+        "torann/geoip": "^1.0",
+        "yansongda/laravel-pay": "^2.0",
+        "yansongda/pay": "^2.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "~3.1",

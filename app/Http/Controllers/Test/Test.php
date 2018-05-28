@@ -18,6 +18,9 @@ use Mockery\Matcher\Closure;
 use iBrand\Sms\SmsController;
 use Overtrue\EasySms\EasySms;
 use Overtrue\EasySms\Exceptions\NoGatewayAvailableException;
+use App\Providers\Pay\Facade\Payment;
+use Yansongda\LaravelPay\Facades\Pay;
+
 
 class Test extends Controller
 {
@@ -25,8 +28,31 @@ class Test extends Controller
 	
 	public $test = [];
 	
+	
 	public function index( Request $request, Topic $topic )
 	{
+		
+		//商户订单号，商户网站订单系统中唯一订单号，必填
+		$params['WIDout_trade_no'] = $params['WIDout_trade_no'] ?? str_random(10);
+		
+		//订单名称，必填
+		$params['WIDsubject'] = $params['WIDsubject'] ?? 'test';
+		
+		//付款金额，必填
+		$params['WIDtotal_amount'] = $params['WIDtotal_amount'] ?? 0.01;
+		
+		//商品描述，可空
+		$params['WIDbody' ] = $params['WIDbody' ] ?? '描述';
+		$order = [
+			'out_trade_no' => time(),
+			'body' => 'subject-测试',
+			'total_fee'      => '1',
+		];
+
+		// 扫码支付使用 模式二
+		
+		dd(app(),app()->make('config'));
+		
 		$config = [
 			// HTTP 请求的超时时间（秒）
 			'timeout' => 5.0,

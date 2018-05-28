@@ -67,6 +67,10 @@ Route::resource('notifications','NotificationsController',['only'=>'index']);
 | 测试
 |
 */
+Route::get('test/payment','Payment@index');
+Route::any('test/payment/return_url','Payment@returnUrl');
+Route::any('test/payment/notify_url','Payment@notify');
+
 Route::any('test','Test\Test@index')->name('test.index');
 
 //Route::any('test','Test\Test@index')->name('test.index');

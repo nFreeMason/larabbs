@@ -13,6 +13,7 @@ class TestServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
+	
 	}
 	
 	/**
