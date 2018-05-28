@@ -11,6 +11,11 @@ use function object_get;
 
 class ReplyObserver
 {
+	public function deleted(Reply $reply)
+	{
+		$reply->topic->decrement('reply_count',1);
+	}
+	
 	public function created(Reply $reply)
 	{
 		$topic = $reply->topic;
@@ -29,4 +34,6 @@ class ReplyObserver
     {
         //
     }
+    
+    
 }
