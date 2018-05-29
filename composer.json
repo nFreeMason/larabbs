@@ -27,6 +27,7 @@
         "toin0u/geocoder-laravel": "^4.0",
         "toplan/laravel-sms": "~2.6",
         "torann/geoip": "^1.0",
+        "viacreative/sudo-su": "~1.1",
         "yansongda/laravel-pay": "^2.0",
         "yansongda/pay": "^2.2"
     },
