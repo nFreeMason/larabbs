@@ -37,9 +37,12 @@ class UsersTableSeeder extends Seeder
         // 插入到数据库中
         User::insert($user_array);
 
-        // 单独处理第一个用户的数据
+        $user = User::find(2);
+        $user->assignRole('Maintainer');
+        
+        // 单独处理第一个用户的数据，并指派为『站长』
         $user = User::find(1);
-
+		$user->assignRole('Founder');
         $user->name = '冉凯';
         $user->email = '1502534146@qq.com';
         $user->avatar = '/uploads/images/avatars/201804/21/1_1524291098_2s7ie6n9S3.jpg';
