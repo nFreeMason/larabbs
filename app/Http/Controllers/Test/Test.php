@@ -76,13 +76,13 @@ class Test extends Controller
 					'api_key' => '824f0ff2f71cab52936axxxxxxxxxx',
 				],
 				'aliyun' => [
-					'access_key_id' => 'LTAIdnPnNVfO9ZDZ',
+					'access_key_id' => '123',
 					'access_key_secret' => 'PuwaMbt1N1QprVe5D2gt9S2Zij4K5z',
 					'sign_name' => '博腾技术有限公司',
 					'code_template_id' => 'SMS_60710004',
 				],
 				'alidayu' => [
-					'app_key' => 'LTAIdnPnNVfO9ZDZ',
+					'app_key' => '123',
 					'app_secret' => 'PuwaMbt1N1QprVe5D2gt9S2Zij4K5z',
 					'sign_name' => '博腾技术有限公司',
 				],
